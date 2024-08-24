@@ -11,3 +11,30 @@ Month-over-Month (MoM) percentage % (growth or shrinking)
 
 Good Loan - This category includes loans with a loan status of 'Fully Paid' and 'Current.'
 Bad Loan - This category includes loans with a loan status of 'Charged Off.'
+
+Measures used
+
+Total Loan Applications = COUNT(financial_loan[id])
+MTD Loan Applications = CALCULATE(TOTALMTD([Total Loan Applications],'Date Table'[Date]))
+PMTD Loan Applications = CALCULATE([Total Loan Applications],DATESMTD(DATEADD('Date Table'[Date],-1,MONTH)))
+MoM Loan Applications = ( [MTD Loan Applications] - [PMTD Loan Applications] )/[PMTD Loan Applications]
+
+Total Funded Amount = SUM(financial_loan[loan_amount])
+MTD Funded Amount = CALCULATE(TOTALMTD([Total Funded Amount],'Date Table'[Date]))
+PMTD Funded Amount = CALCULATE([Total Funded Amount],DATESMTD(DATEADD('Date Table'[Date],-1,MONTH)))
+MoM Funded Amount = ( [MTD Funded Amount] - [PMTD Funded Amount] )/[PMTD Funded Amount]
+
+Total Amount Received = SUM(financial_loan[total_payment])
+MTD Amount Received = CALCULATE(TOTALMTD([Total Amount Received],'Date Table'[Date]))
+PMTD Amount Received = CALCULATE([Total Amount Received],DATESMTD(DATEADD('Date Table'[Date],-1,MONTH)))
+MoM Amount Received = ( [MTD Amount Received] - [PMTD Amount Received] )/[PMTD Amount Received]
+
+Average Interest Rate = AVERAGE(financial_loan[int_rate])
+MTD Avg int rate = CALCULATE(TOTALMTD([Average Interest Rate],'Date Table'[Date]))
+PMTD Avg int rate = CALCULATE([Average Interest Rate],DATESMTD(DATEADD('Date Table'[Date],-1,MONTH)))
+MoM Avg int rate = ( [MTD Avg int rate] - [PMTD Avg int rate] )/[PMTD Avg int rate]
+
+Average DTI = AVERAGE(financial_loan[dti])
+MTD Avg DTI = CALCULATE(TOTALMTD([Average DTI],'Date Table'[Date]))
+PMTD Avg DTI = CALCULATE([Average DTI],DATESMTD(DATEADD('Date Table'[Date],-1,MONTH)))
+MoM Avg DTI = ( [MTD Avg DTI] - [PMTD Avg DTI] )/[PMTD Avg DTI]
