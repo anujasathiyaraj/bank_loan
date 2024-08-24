@@ -1,0 +1,10 @@
+The terms used in the project are as follows.
+
+Month-to-Date (MTD)
+Month-over-Month (MoM) percentage % (growth or shrinking)
+
+1.	Total Loan Applications: Total number of loan applications received during a specified period.
+2.	Total Funded Amount: The total amount of funds disbursed as loans.
+3.	Total Amount Received: The total amount received from borrowers.
+4.	Average Interest Rate: Calculating the average interest rate across all loans
+5.	Average Debt-to-Income Ratio (DTI): Evaluating the average DTI for borrowers helps us gauge their financial health. It's calculated by dividing monthly debts by gross monthly income.
